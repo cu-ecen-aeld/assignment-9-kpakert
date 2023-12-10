@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-LDD_VERSION = 3544c69e8ecc011e3071bc8cfefabf0224654f7c
+LDD_VERSION = '62d15d54f737ad933a607b3109afaf4f80cde8a9'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
@@ -16,6 +16,8 @@ LDD_GIT_SUBMODULES = YES
 LDD_MODULE_SUBDIRS = scull
 LDD_MODULE_SUBDIRS += misc-modules
 
+LDD_MODULE_MAKE_OPTS = KVERSION=$(LINUX_VERSION_PROBED)
+
 $(eval $(kernel-module))
 
 define LDD_INSTALL_TARGET_CMDS
@@ -25,5 +27,6 @@ define LDD_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 0755 $(@D)/misc-modules/module_unload $(TARGET_DIR)/sbin/
 endef
 
+LDD_POST_BUILD_HOOKS += LDD_INSTALL_TARGET_CMDS
 
 $(eval $(generic-package))
