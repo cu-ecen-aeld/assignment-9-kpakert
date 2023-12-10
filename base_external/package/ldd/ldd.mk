@@ -5,11 +5,11 @@
 #
 ##############################################################
 
-LDD_VERSION  = 3544c69e8ecc011e3071bc8cfefabf0224654f7c
+LDD_VERSION = 3544c69e8ecc011e3071bc8cfefabf0224654f7c
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
-LDD_SITE  = git@github.com:cu-ecen-aeld/assignment-7-kpakert
+LDD_SITE  = 'git@github.com:cu-ecen-aeld/assignment-7-kpakert'
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
 
